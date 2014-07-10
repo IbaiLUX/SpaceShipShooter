@@ -35,13 +35,14 @@ public class PJ_EfectosMovimiento : MonoBehaviour {
 		}
 		//Si la velocidad es diferente a cero...
 		if (rigidbody2D.velocity != Vector2.zero) {
-			//...muestro el efecto en color rojizo.
-			llama.color = new Color (1, 0.3f, 0.3f, 1);
+			//...muestro el efecto.
+			llama.renderer.enabled = true;
+
 		}
 		//...si es 0...
 		else {
 			//...no muestro el efecto.
-			llama.color = new Color (1, 1, 1, 0);
+			llama.renderer.enabled = false;
 			//...la sombra se queda ligeramente atras.
 			sombra.localPosition = new Vector3(0,-.1f,0);		
 		}

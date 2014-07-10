@@ -6,7 +6,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Efecto_Fondo : MonoBehaviour {
+public class Escenario_EfectoFondo : MonoBehaviour {
 
 	//la velocidad del efecto
 	public float velocidad = 1.5f;
