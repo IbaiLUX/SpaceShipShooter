@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// P j_ acelerador.
+/// PJ_EfectosMovimiento.
 /// Este script se encarga de mostrar y ocultar el efecto de llama al acelerar.
 /// Este script se encarga de mover la sombra para dar efecto "paneo" y "tileo".
 /// </summary>

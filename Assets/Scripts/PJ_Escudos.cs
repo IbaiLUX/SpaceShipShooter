@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/// <summary>
+/// PJ_Escudos.
+/// Este script se encarga de los escudos que recoje el jugador.
+/// </summary>
+using UnityEngine;
 using System.Collections;
 
 public class PJ_Escudos : MonoBehaviour {

@@ -1,6 +1,6 @@
 ﻿/// <summary>
-/// P j_ movimiento.
-/// Se encarga de mover al jugador mediante teclado.
+/// PJ_Movimiento.
+/// Este script se encarga de mover al jugador mediante teclado.
 /// </summary>
 using UnityEngine;
 using System.Collections;
