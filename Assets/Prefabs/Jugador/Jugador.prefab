@@ -31,7 +31,7 @@ GameObject:
   - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Jugador
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.8911047, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400006}
@@ -229,8 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 5
-  limitesX: {x: -5, y: 5}
-  limitesY: {x: -4, y: 1}
+  limitesX: {x: -6.5, y: 6}
+  limitesY: {x: -4, y: 3.5}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,8 +258,8 @@ MonoBehaviour:
   posDisparo: {fileID: 400008}
   bala: {fileID: 100000, guid: e26dc643d46215e4e8c3794d7cda44cb, type: 2}
   laser: {fileID: 100000, guid: 0ce61fa35817c9e4a82b630dd9ac84d1, type: 2}
-  disparoActual: 4
-  ratioDisparo: .5
+  disparoActual: 0
+  ratioDisparo: .25
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
