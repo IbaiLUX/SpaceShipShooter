@@ -21,8 +21,10 @@ public class IA_Enemigo : MonoBehaviour {
 	public TiposDisparo miDisparo = TiposDisparo.Simple;
 	//La velocidad del enemigo.
 	public float velocidad = 0.5f;
-	//Prefab del disparo.
-	public GameObject disparo;
+	//Prefab del disparo simple.
+	public GameObject disparoSimple;
+	//Prefab del disparo dirigido.
+	public GameObject disparoDirigido;
 	//Transform de donde sale el disparo.
 	public Transform posDisparo;
 	//Ratio de disparo.
@@ -46,13 +48,16 @@ public class IA_Enemigo : MonoBehaviour {
 				//...si es simple...
 				case TiposDisparo.Simple:
 					//...instancio el prefab del disparo.
-					GameObject disparoSimple = (GameObject)Instantiate(disparo, posDisparo.position, Quaternion.identity);
+					GameObject disparoS = (GameObject)Instantiate(disparoSimple, posDisparo.position, Quaternion.identity);
 					//...renombro.
-					disparoSimple.name = "DisparoEnemigo";
+					disparoS.name = "DisparoEnemigo";
 				return;
 				//...si es dirigido...
 				case TiposDisparo.Dirigido:
-
+					//...instancio el prefab del disparo.
+					GameObject disparoD = (GameObject)Instantiate(disparoDirigido, posDisparo.position, Quaternion.identity);
+					//...renombro.
+					disparoD.name = "DisparoEnemigo";
 				return;
 			}
 		}
