@@ -125,6 +125,93 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 0cced266265ace74eb78b71d4c1c8159, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &26782335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100012, guid: 0af685122346a6e46a337eb8f4ce2c89, type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 26782336}
+  - 212: {fileID: 26782339}
+  - 60: {fileID: 26782338}
+  - 114: {fileID: 26782337}
+  m_Layer: 0
+  m_Name: Escudo0
+  m_TagString: Escudo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &26782336
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400012, guid: 0af685122346a6e46a337eb8f4ce2c89, type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 26782335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.01119363, y: -.131895065, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1653133302}
+  m_RootOrder: 0
+--- !u!114 &26782337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400008, guid: 0af685122346a6e46a337eb8f4ce2c89,
+    type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 26782335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7faf2c173362c924da1a648325dd216e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activo: 0
+--- !u!60 &26782338
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6000004, guid: 0af685122346a6e46a337eb8f4ce2c89,
+    type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 26782335}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Poly:
+    m_Paths:
+    - - {x: .109999999, y: .600000024}
+      - {x: -.189999998, y: .600000024}
+      - {x: -.319999993, y: .460000008}
+      - {x: -.319999993, y: .159999996}
+      - {x: -.189999998, y: -.0199999996}
+      - {x: .189999998, y: -.0199999996}
+      - {x: .300000012, y: .150000006}
+      - {x: .300000012, y: .439999998}
+      - {x: .129999995, y: .589999974}
+--- !u!212 &26782339
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200006, guid: 0af685122346a6e46a337eb8f4ce2c89,
+    type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 26782335}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 24f2185f9abe7784d9371fa65eab5c9b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &35529184
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +606,93 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &411684102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100014, guid: 0af685122346a6e46a337eb8f4ce2c89, type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 411684103}
+  - 212: {fileID: 411684106}
+  - 60: {fileID: 411684105}
+  - 114: {fileID: 411684104}
+  m_Layer: 0
+  m_Name: Escudo1
+  m_TagString: Escudo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &411684103
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400014, guid: 0af685122346a6e46a337eb8f4ce2c89, type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 411684102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.0732748508, y: .732748985, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1653133302}
+  m_RootOrder: 1
+--- !u!114 &411684104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400010, guid: 0af685122346a6e46a337eb8f4ce2c89,
+    type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 411684102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7faf2c173362c924da1a648325dd216e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activo: 0
+--- !u!60 &411684105
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6000006, guid: 0af685122346a6e46a337eb8f4ce2c89,
+    type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 411684102}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Poly:
+    m_Paths:
+    - - {x: .109999999, y: .600000024}
+      - {x: -.189999998, y: .600000024}
+      - {x: -.319999993, y: .460000008}
+      - {x: -.319999993, y: .159999996}
+      - {x: -.189999998, y: -.0199999996}
+      - {x: .189999998, y: -.0199999996}
+      - {x: .300000012, y: .150000006}
+      - {x: .300000012, y: .439999998}
+      - {x: .129999995, y: .589999974}
+--- !u!212 &411684106
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200008, guid: 0af685122346a6e46a337eb8f4ce2c89,
+    type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 411684102}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 24f2185f9abe7784d9371fa65eab5c9b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &492516304
 Prefab:
   m_ObjectHideFlags: 0
@@ -981,6 +1155,7 @@ GameObject:
   - 114: {fileID: 738995630}
   - 114: {fileID: 738995634}
   - 114: {fileID: 738995635}
+  - 114: {fileID: 738995636}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Player
@@ -1074,6 +1249,7 @@ Transform:
   - {fileID: 235784513}
   - {fileID: 1091208595}
   - {fileID: 2038301596}
+  - {fileID: 1653133302}
   m_Father: {fileID: 0}
   m_RootOrder: 11
 --- !u!114 &738995634
@@ -1107,6 +1283,25 @@ MonoBehaviour:
   laser: {fileID: 100000, guid: 0ce61fa35817c9e4a82b630dd9ac84d1, type: 2}
   disparoActual: 0
   ratioDisparo: .25
+--- !u!114 &738995636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: 0af685122346a6e46a337eb8f4ce2c89,
+    type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 738995629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed7571b6cc720e74f974a84ce7e61511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cEscudos: {fileID: 1653133302}
+  vRotacion: 200
+  misEscudos:
+  - {fileID: 26782337}
+  - {fileID: 411684104}
+  - {fileID: 1443150783}
+  escudoActual: 7
 --- !u!1 &768768983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,6 +1734,18 @@ Prefab:
       propertyPath: disparoActual
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 0af685122346a6e46a337eb8f4ce2c89, type: 2}
+      propertyPath: m_TagString
+      value: Escudo
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 0af685122346a6e46a337eb8f4ce2c89, type: 2}
+      propertyPath: m_TagString
+      value: Escudo
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 0af685122346a6e46a337eb8f4ce2c89, type: 2}
+      propertyPath: m_TagString
+      value: Escudo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0af685122346a6e46a337eb8f4ce2c89, type: 2}
   m_RootGameObject: {fileID: 738995629}
@@ -1791,6 +1998,93 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &1443150781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100016, guid: 0af685122346a6e46a337eb8f4ce2c89, type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1443150782}
+  - 212: {fileID: 1443150785}
+  - 60: {fileID: 1443150784}
+  - 114: {fileID: 1443150783}
+  m_Layer: 0
+  m_Name: Escudo2
+  m_TagString: Escudo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1443150782
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400016, guid: 0af685122346a6e46a337eb8f4ce2c89, type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 1443150781}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.01119399, y: -.131895065, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1653133302}
+  m_RootOrder: 2
+--- !u!114 &1443150783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400012, guid: 0af685122346a6e46a337eb8f4ce2c89,
+    type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 1443150781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7faf2c173362c924da1a648325dd216e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activo: 0
+--- !u!60 &1443150784
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6000002, guid: 0af685122346a6e46a337eb8f4ce2c89,
+    type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 1443150781}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Poly:
+    m_Paths:
+    - - {x: .109999999, y: .600000024}
+      - {x: -.189999998, y: .600000024}
+      - {x: -.319999993, y: .460000008}
+      - {x: -.319999993, y: .159999996}
+      - {x: -.189999998, y: -.0199999996}
+      - {x: .189999998, y: -.0199999996}
+      - {x: .300000012, y: .150000006}
+      - {x: .300000012, y: .439999998}
+      - {x: .129999995, y: .589999974}
+--- !u!212 &1443150785
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200010, guid: 0af685122346a6e46a337eb8f4ce2c89,
+    type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 1443150781}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 24f2185f9abe7784d9371fa65eab5c9b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1606191190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,6 +2283,36 @@ PolygonCollider2D:
       - {x: .50999999, y: -.400000006}
       - {x: .529999971, y: -.379999995}
       - {x: .529999971, y: -.270000011}
+--- !u!1 &1653133301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100010, guid: 0af685122346a6e46a337eb8f4ce2c89, type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1653133302}
+  m_Layer: 0
+  m_Name: Escudos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1653133302
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400010, guid: 0af685122346a6e46a337eb8f4ce2c89, type: 2}
+  m_PrefabInternal: {fileID: 1088557287}
+  m_GameObject: {fileID: 1653133301}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 26782336}
+  - {fileID: 411684103}
+  - {fileID: 1443150782}
+  m_Father: {fileID: 738995633}
+  m_RootOrder: 4
 --- !u!1 &1690169347
 GameObject:
   m_ObjectHideFlags: 0

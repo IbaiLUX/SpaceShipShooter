@@ -191,7 +191,7 @@ MonoBehaviour:
   disparoSimple: {fileID: 100000, guid: 5ac7de87e1d3681488b00b080503cf00, type: 2}
   disparoDirigido: {fileID: 100000, guid: e77b09e52988ad541825a923461ed87d, type: 2}
   posDisparo: {fileID: 400006}
-  ratioDisparo: .200000003
+  ratioDisparo: 1
   direccion: {x: 0, y: -1}
   explosion: {fileID: 100000, guid: 50b7757039814a4498a965bd32614b03, type: 2}
   premio: {fileID: 100000, guid: d745922527d3dfc4897208448100d583, type: 2}

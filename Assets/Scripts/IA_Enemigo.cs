@@ -81,7 +81,7 @@ public class IA_Enemigo : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		//Si el objeto que dispara el trigger es la bala del jugador...
+		//Si el objeto que dispara el trigger es la bala...
 		if (other.tag == "BalaJugador") {
 			//...destruyo la bala.
 			Destroy(other.gameObject);
@@ -93,6 +93,15 @@ public class IA_Enemigo : MonoBehaviour {
 			GameObject pr = (GameObject)Instantiate(premio,transform.position,Quaternion.identity);
 			//...renombro.
 			pr.name = "Premio";
+			//...destruyo enemigo.
+			Destroy(gameObject);
+		}
+		//Si el objeto que dispara el trigger es el escudo y su render esta activo...
+		if (other.tag == "Escudo" && other.gameObject.GetComponent<SpriteRenderer>().enabled == true) {
+			//...creo el efecto de explosion.
+			GameObject go = (GameObject)Instantiate(explosion, transform.position, Quaternion.identity);
+			//...el efecto de explosion se autodestruye en 1s(duracion de la animacion).
+			Destroy(go,1);
 			//...destruyo enemigo.
 			Destroy(gameObject);
 		}

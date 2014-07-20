@@ -16,12 +16,16 @@ public class PowerUP : MonoBehaviour {
 	public TiposPowerUP miPowerUP = TiposPowerUP.Nulo;
 	//Referencia al script de disparo del jugador.
 	private PJ_Disparo pjD;
+	//Referencia al script de escudos del jugador.
+	private PJ_Escudos pjE;
 	//Sprites posibles.
 	public Sprite[] sprites;
 	
 	void Start () {
 		//Recojo la referencia al script del disparo del jugador.
 		pjD = GameObject.FindGameObjectWithTag ("Player").GetComponent<PJ_Disparo> ();
+		//Recojo la referencia al script de escudos del jugador.
+		pjE = GameObject.FindGameObjectWithTag ("Player").GetComponent<PJ_Escudos> ();
 		//Le doy valor aleatorio al powerUp.
 		miPowerUP = GetRandomEnum<TiposPowerUP> ();
 		//Dependiendo del tipo de power up...
@@ -138,6 +142,13 @@ public class PowerUP : MonoBehaviour {
 				case TiposPowerUP.Laser:
 					//...cambio el disparo.
 					pjD.disparoActual = PJ_Disparo.TiposDisparo.laser;
+					//...destruyo item.
+					Destroy(gameObject);
+				return;
+				//Si es escudo...
+				case TiposPowerUP.Escudo:
+					//...activo escudo.
+					pjE.ActivarEscudo();
 					//...destruyo item.
 					Destroy(gameObject);
 				return;

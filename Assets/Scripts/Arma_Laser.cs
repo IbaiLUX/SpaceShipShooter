@@ -44,12 +44,18 @@ public class Arma_Laser : MonoBehaviour {
 	void Update(){
 		//Si es dirigido...
 		if (dirigido) {
-			//...el laser se posiciona en el enimigo.
-			transform.position = miEnemigo.transform.position;
+			//La direccion del movimiento
+			Vector3 direccion = transform.position - miEnemigo.transform.position; 
+			//Nuevo angulo.
+			float angulo = Mathf.Atan2(direccion.x, direccion.y) * Mathf.Rad2Deg;
+			//Asigno rotacion.
+			transform.rotation = Quaternion.AngleAxis(angulo, -Vector3.forward);
+			//Añado velocidad.
+			rigidbody2D.velocity = new Vector2 (-direccion.x, -direccion.y)*miVelocidad;
 		//...si no es dirigido...
 		} else {
 			//... saldra hacia la parte superior de la zona de juego.
-			transform.Translate(Vector3.up*Time.deltaTime*miVelocidad);	
+			transform.Translate(Vector3.up*Time.deltaTime*miVelocidad*3);	
 		}
 	}
 }
