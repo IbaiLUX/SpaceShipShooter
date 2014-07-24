@@ -1,6 +1,7 @@
 ﻿/// <summary>
 /// IA_ enemigo1.
 /// Este script se encarga de mover el enimgo y del ataque.
+/// La direccion se asigna tomando la rotacion del enemigo, la rotacion se asigna en "NIVEL" dependiendo del spawnPoint.
 /// Tiene diferentes tipos de movimiento y ataques.
 /// **NOTA**
 /// Si velocidad es 0 no se movera en ola.
@@ -51,6 +52,28 @@ public class IA_Enemigo : MonoBehaviour {
 					GameObject disparoS = (GameObject)Instantiate(disparoSimple, posDisparo.position, Quaternion.identity);
 					//...renombro.
 					disparoS.name = "DisparoEnemigo";
+					//CONFIGARANDO BALA SEGUN DONDE SE CREA EL ENEMIGO--------------
+					//Si se creo en IZQ...
+					if(gameObject.transform.rotation == Quaternion.Euler(0,0,270)){
+						//...nueva direccion de la bala.
+						disparoS.GetComponent<Arma_Bala>().direccion = new Vector2(1,0);
+						//...nueva rotacion de la bala.
+						disparoS.transform.Rotate(0,0,90);
+					}
+					//CONFIGARANDO BALA SEGUN DONDE SE CREA EL ENEMIGO--------------
+					//DER
+					if(gameObject.transform.rotation == Quaternion.Euler(0,0,90)){
+						//Nueva direccion de la bala.
+						disparoS.GetComponent<Arma_Bala>().direccion = new Vector2(-1,0);
+						//...nueva rotacion de la bala.
+						disparoS.transform.Rotate(0,0,90);
+					}
+					//CONFIGARANDO BALA SEGUN DONDE SE CREA EL ENEMIGO--------------
+					//CEN
+					if(gameObject.transform.rotation == Quaternion.Euler(0,0,180)){
+						//Nueva direccion de la bala.
+						disparoS.GetComponent<Arma_Bala>().direccion = new Vector2(0,-1);
+					}
 				return;
 				//...si es dirigido...
 				case TiposDisparo.Dirigido:
@@ -66,7 +89,21 @@ public class IA_Enemigo : MonoBehaviour {
 			//...si es simple...
 			case TiposMovimiento.Simple:
 				//...la direccion del enemigo es la de defecto.
-				direccion = new Vector2(0,-1);
+				//direccion = new Vector2(0,-1);
+				//CONFIGARANDO MOVIMIENTO SEGUN DONDE SE CREA EL ENEMIGO--------------
+				//IZQ
+				if(gameObject.transform.rotation == Quaternion.Euler(0,0,270)){
+					direccion = new Vector2(1,0);
+				}
+				//CONFIGARANDO MOVIMIENTO SEGUN DONDE SE CREA EL ENEMIGO--------------
+				//DER
+				if(gameObject.transform.rotation == Quaternion.Euler(0,0,90)){
+					direccion = new Vector2(-1,0);
+				}
+				//CEN
+				if(gameObject.transform.rotation == Quaternion.Euler(0,0,180)){
+					direccion = new Vector2(0,-1);
+				}
 				//...añado velocidad.
 				rigidbody2D.velocity = direccion * velocidad;
 			return;

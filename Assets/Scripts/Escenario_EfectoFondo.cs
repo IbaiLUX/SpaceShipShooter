@@ -1,7 +1,6 @@
 ﻿/// <summary>
 /// Escenario_EfectoFondo.
 /// Este escript se encarga de crear el efecto fondo incrementando el offset del material.
-/// El material estara inportado en "Wrap Mode = Repeat". 
 /// </summary>
 using UnityEngine;
 using System.Collections;
