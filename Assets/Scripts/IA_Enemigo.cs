@@ -1,8 +1,8 @@
 ﻿/// <summary>
 /// IA_ enemigo1.
 /// Este script se encarga de mover el enimgo y del ataque.
-/// La direccion se asigna tomando la rotacion del enemigo, la rotacion se asigna en "NIVEL" dependiendo del spawnPoint.
 /// Tiene diferentes tipos de movimiento y ataques.
+/// La direccion se asigna tomando la rotacion del enemigo, la rotacion se asigna en "NIVEL" dependiendo del spawnPoint.
 /// **NOTA**
 /// Si velocidad es 0 no se movera en ola.
 /// </summary>
@@ -88,8 +88,6 @@ public class IA_Enemigo : MonoBehaviour {
 		switch(miMovimiento){
 			//...si es simple...
 			case TiposMovimiento.Simple:
-				//...la direccion del enemigo es la de defecto.
-				//direccion = new Vector2(0,-1);
 				//CONFIGARANDO MOVIMIENTO SEGUN DONDE SE CREA EL ENEMIGO--------------
 				//IZQ
 				if(gameObject.transform.rotation == Quaternion.Euler(0,0,270)){
@@ -100,6 +98,7 @@ public class IA_Enemigo : MonoBehaviour {
 				if(gameObject.transform.rotation == Quaternion.Euler(0,0,90)){
 					direccion = new Vector2(-1,0);
 				}
+				//CONFIGARANDO MOVIMIENTO SEGUN DONDE SE CREA EL ENEMIGO--------------
 				//CEN
 				if(gameObject.transform.rotation == Quaternion.Euler(0,0,180)){
 					direccion = new Vector2(0,-1);
@@ -109,8 +108,21 @@ public class IA_Enemigo : MonoBehaviour {
 			return;
 			//...si es en forma de ola...
 			case TiposMovimiento.Ola:
-				//...para moverse en forma de ola direccion en X varia de amplitud a -amplitud
-				direccion = new Vector2((Mathf.PingPong(Time.time*velocidad, amplitud) - (amplitud/2)),-velocidad);
+				//CONFIGARANDO MOVIMIENTO SEGUN DONDE SE CREA EL ENEMIGO--------------
+				//IZQ
+				if(gameObject.transform.rotation == Quaternion.Euler(0,0,270)){
+					direccion = new Vector2(velocidad,(Mathf.PingPong(Time.time*velocidad, amplitud) - (amplitud/2)));
+				}
+				//CONFIGARANDO MOVIMIENTO SEGUN DONDE SE CREA EL ENEMIGO--------------
+				//DER
+				if(gameObject.transform.rotation == Quaternion.Euler(0,0,90)){
+					direccion = new Vector2(-velocidad,(Mathf.PingPong(Time.time*velocidad, amplitud) - (amplitud/2)));
+				}
+				//CONFIGARANDO MOVIMIENTO SEGUN DONDE SE CREA EL ENEMIGO--------------
+				//CEN
+				if(gameObject.transform.rotation == Quaternion.Euler(0,0,180)){
+					direccion = new Vector2((Mathf.PingPong(Time.time*velocidad, amplitud) - (amplitud/2)),-velocidad);
+				}
 				//...añado velocidad.
 				rigidbody2D.velocity = direccion * velocidad;
 			return;

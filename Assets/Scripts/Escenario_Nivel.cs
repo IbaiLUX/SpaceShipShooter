@@ -18,6 +18,7 @@ public class Nivel{
 	//Tiempos
 	public float tInicio = 5.5f;//Para que empiezen a salir enemigos.
 	public float tEnemigos = 30.3f;//Tiempo durante el que saldran enemigos.
+	public float tIntervalo = 2.5f;//Tiempo de intervalo entre enemigos.
 	//Esta completo el nivel.
 	public bool completado = false;
 	//Enemigos en el nivel.
@@ -39,12 +40,15 @@ public class Escenario_Nivel : MonoBehaviour {
 	public GameObject fondoNivel;
 	//Tiempo.
 	private float tiempo;
-	//Tiempo entre unidades.
-	private float tEntreUnidades = 1f;
+	//Tiempo para proximo enemigo.
+	private float tProxEnemigo;
 
 	// Use this for initialization
 	void Start () {
+		//Ajusto nivel actual.
 		nivelActual = Niveles [0];
+		//Ajusto tiempo para el primer enemigo.
+		tProxEnemigo = Time.time + nivelActual.tInicio;
 	}
 	
 	// Update is called once per frame
@@ -70,13 +74,12 @@ public class Escenario_Nivel : MonoBehaviour {
 				}
 				//...si no...
 				else{
-					if(Time.time > tEntreUnidades){
+					//Si ha pasado tiempo suficiente...
+					if(Time.time >= tProxEnemigo){
 						//...guardo la posicion donde creo enemigo.
 						Vector3 pos = spawnPoint[Random.Range(0,spawnPoint.Length)].position;
 						//...creo enemigo.
 						GameObject go = (GameObject)Instantiate(nivelActual.enemigos[Random.Range(0,nivelActual.enemigos.Length)], pos, Quaternion.identity);
-						//...actualizo tiempo.
-						tEntreUnidades = Time.time + tEntreUnidades;
 						//...si fue creado en IZQ.
 						if(pos == spawnPoint[0].position||pos == spawnPoint[3].position){
 							//...cambio su rotacion.
@@ -92,6 +95,8 @@ public class Escenario_Nivel : MonoBehaviour {
 							//...cambio su rotacion.
 							go.transform.Rotate(0,0,180);
 						}
+						//...actualizo tiempo para proximo enemigo.
+						tProxEnemigo = Time.time + nivelActual.tIntervalo;
 					}
 				}
 			return;
