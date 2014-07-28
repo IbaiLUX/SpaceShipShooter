@@ -11,6 +11,8 @@ using System.Linq;
 public class Arma_Laser : MonoBehaviour {
 	//Velocidad si va recto.
 	public float miVelocidad = 5.5f;
+	//Almacen Enemigos.
+	public GameObject[] enemigos;
 	//Mi enemigo.
 	private GameObject miEnemigo = null;
 	//Para saber si va dirigido al enemigo o no.
@@ -18,7 +20,7 @@ public class Arma_Laser : MonoBehaviour {
 
 	void Start(){
 		//Busco los enemigos y los guardo en "almacen".
-		GameObject[] enemigos = GameObject.FindGameObjectsWithTag ("Enemigo");
+		enemigos = GameObject.FindGameObjectsWithTag ("Enemigo");
 		//Si hay enemigos en el "almacen"...
 		if (enemigos.Length != 0) {
 			//...busco el enemigo mas cercano.
@@ -43,7 +45,7 @@ public class Arma_Laser : MonoBehaviour {
 
 	void Update(){
 		//Si es dirigido...
-		if (dirigido) {
+		if (dirigido && miEnemigo != null) {
 			//La direccion del movimiento
 			Vector3 direccion = transform.position - miEnemigo.transform.position; 
 			//Nuevo angulo.

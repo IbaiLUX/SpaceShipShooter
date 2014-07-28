@@ -193,7 +193,7 @@ MonoBehaviour:
   posDisparo: {fileID: 400006}
   ratioDisparo: 1
   direccion: {x: 0, y: -1}
-  explosion: {fileID: 100000, guid: ab785c8ac43870b43a6418e4d37fa3ee, type: 2}
+  explosion: {fileID: 100000, guid: 50b7757039814a4498a965bd32614b03, type: 2}
   premio: {fileID: 100000, guid: d745922527d3dfc4897208448100d583, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:

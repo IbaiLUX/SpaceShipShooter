@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 17797ad903a7c3b48b90a8db96c1a4e0
+guid: fb73b0f69f0386b4aa804d758dfe3a21
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -42,7 +42,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: ExplosionEnemigo_0
+    - name: HumoJefe_0
       rect:
         serializedVersion: 2
         x: 0
@@ -52,7 +52,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_1
+    - name: HumoJefe_1
       rect:
         serializedVersion: 2
         x: 256
@@ -62,7 +62,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_2
+    - name: HumoJefe_2
       rect:
         serializedVersion: 2
         x: 512
@@ -72,7 +72,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_3
+    - name: HumoJefe_3
       rect:
         serializedVersion: 2
         x: 768
@@ -82,7 +82,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_4
+    - name: HumoJefe_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -92,7 +92,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_5
+    - name: HumoJefe_5
       rect:
         serializedVersion: 2
         x: 1280
@@ -102,7 +102,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_6
+    - name: HumoJefe_6
       rect:
         serializedVersion: 2
         x: 1536
@@ -112,7 +112,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_7
+    - name: HumoJefe_7
       rect:
         serializedVersion: 2
         x: 1792
@@ -122,7 +122,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_8
+    - name: HumoJefe_8
       rect:
         serializedVersion: 2
         x: 0
@@ -132,7 +132,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_9
+    - name: HumoJefe_9
       rect:
         serializedVersion: 2
         x: 256
@@ -142,7 +142,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_10
+    - name: HumoJefe_10
       rect:
         serializedVersion: 2
         x: 512
@@ -152,7 +152,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_11
+    - name: HumoJefe_11
       rect:
         serializedVersion: 2
         x: 768
@@ -162,7 +162,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_12
+    - name: HumoJefe_12
       rect:
         serializedVersion: 2
         x: 1024
@@ -172,7 +172,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_13
+    - name: HumoJefe_13
       rect:
         serializedVersion: 2
         x: 1280
@@ -182,7 +182,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_14
+    - name: HumoJefe_14
       rect:
         serializedVersion: 2
         x: 1536
@@ -192,7 +192,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_15
+    - name: HumoJefe_15
       rect:
         serializedVersion: 2
         x: 1792
@@ -202,7 +202,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_16
+    - name: HumoJefe_16
       rect:
         serializedVersion: 2
         x: 0
@@ -212,7 +212,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_17
+    - name: HumoJefe_17
       rect:
         serializedVersion: 2
         x: 256
@@ -222,7 +222,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_18
+    - name: HumoJefe_18
       rect:
         serializedVersion: 2
         x: 512
@@ -232,7 +232,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_19
+    - name: HumoJefe_19
       rect:
         serializedVersion: 2
         x: 768
@@ -242,7 +242,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_20
+    - name: HumoJefe_20
       rect:
         serializedVersion: 2
         x: 1024
@@ -252,7 +252,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_21
+    - name: HumoJefe_21
       rect:
         serializedVersion: 2
         x: 1280
@@ -262,7 +262,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_22
+    - name: HumoJefe_22
       rect:
         serializedVersion: 2
         x: 1536
@@ -272,7 +272,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_23
+    - name: HumoJefe_23
       rect:
         serializedVersion: 2
         x: 1792
@@ -282,7 +282,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_24
+    - name: HumoJefe_24
       rect:
         serializedVersion: 2
         x: 0
@@ -292,7 +292,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_25
+    - name: HumoJefe_25
       rect:
         serializedVersion: 2
         x: 256
@@ -302,7 +302,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_26
+    - name: HumoJefe_26
       rect:
         serializedVersion: 2
         x: 512
@@ -312,7 +312,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_27
+    - name: HumoJefe_27
       rect:
         serializedVersion: 2
         x: 768
@@ -322,7 +322,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_28
+    - name: HumoJefe_28
       rect:
         serializedVersion: 2
         x: 1024
@@ -332,7 +332,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_29
+    - name: HumoJefe_29
       rect:
         serializedVersion: 2
         x: 1280
@@ -342,7 +342,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_30
+    - name: HumoJefe_30
       rect:
         serializedVersion: 2
         x: 1536
@@ -352,7 +352,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_31
+    - name: HumoJefe_31
       rect:
         serializedVersion: 2
         x: 1792
@@ -362,7 +362,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_32
+    - name: HumoJefe_32
       rect:
         serializedVersion: 2
         x: 0
@@ -372,7 +372,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_33
+    - name: HumoJefe_33
       rect:
         serializedVersion: 2
         x: 256
@@ -382,7 +382,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_34
+    - name: HumoJefe_34
       rect:
         serializedVersion: 2
         x: 512
@@ -392,20 +392,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_35
+    - name: HumoJefe_35
       rect:
         serializedVersion: 2
         x: 768
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ExplosionEnemigo_36
-      rect:
-        serializedVersion: 2
-        x: 1024
         y: 0
         width: 256
         height: 256

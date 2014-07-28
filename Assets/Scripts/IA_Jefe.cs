@@ -10,11 +10,20 @@ using System.Linq;
 public class IA_Jefe : MonoBehaviour {
 	//Referencia a las zonas
 	public IA_Jefe_ZonaDisparo[] misZonas;
-
+	//Estan las zonas destruidas.
 	public bool[] zonasDestruidas;
-
+	//Fase final
+	public bool fFinal = false;
 	//Vida del jefe despues de destruir zonas.
 	public int vida = 20;
+	//Ataque del Jefe.
+	public GameObject magiaJefe;
+	//Posicion para magia.
+	public Transform posMagia;
+	//Ratio de disparo.
+	public float ratioDisparo = .5f;
+	//Almacen de tiempo para el siguiente disparo.
+	private float proximoDisparo = 0.1f;
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +46,27 @@ public class IA_Jefe : MonoBehaviour {
 		//Si todos son verdad...
 		if (zonasDestruidas.All (b => b)) {
 			//Es fase final de boss.
-			Debug.Log("ROTOS");
+			fFinal = true;
+		}
+		//Durante la fase final...
+		if (fFinal) {
+			//...si esta en tiempo...
+			if (Time.time >= proximoDisparo) {
+				//...creo magia...
+				GameObject go = (GameObject)Instantiate (magiaJefe, posMagia.position, Quaternion.identity);
+				//...renombro.
+				go.name = "Magia Jefe";
+				//...actualizo tiempo.
+				proximoDisparo = Time.time + ratioDisparo;
+			}
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D c){
+		//Si es fase final y lo que dispara el trigger es la bala del jugador...
+		if (fFinal && c.tag == "BalaJugador") {
+			//...resto un punto de vida.
+			vida = vida -1;
 		}
 	}
 }

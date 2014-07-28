@@ -12,6 +12,12 @@ public class IA_Jefe_ZonaDisparo : MonoBehaviour {
 	public bool destruido = false;
 	//Efecto al ser destruido.
 	public GameObject efectoEscudoDestruido;
+	//Bala del enemigo.
+	public GameObject balaJefe;
+	//Ratio de disparo.
+	public float ratioDisparo = .5f;
+	//Almacen de tiempo para el siguiente disparo.
+	private float proximoDisparo = 0.1f;
 
 	void Start(){
 		//Desactivo el efecto.
@@ -27,7 +33,18 @@ public class IA_Jefe_ZonaDisparo : MonoBehaviour {
 		//Si el escudo esta destruido...
 		if (destruido) {
 			//...muestro el efecto.
-			efectoEscudoDestruido.SetActive(true);		
+			efectoEscudoDestruido.SetActive (true);		
+		//...si no...
+		} else {
+			//...si esta en tiempo...
+			if (Time.time >= proximoDisparo) {
+				//...creo bala...
+				GameObject go = (GameObject)Instantiate (balaJefe, transform.position, Quaternion.identity);
+				//...renombro.
+				go.name = "Bala Jefe";
+				//...actualizo tiempo.
+				proximoDisparo = Time.time + ratioDisparo;
+			}
 		}
 	}
 	
