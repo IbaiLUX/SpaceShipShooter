@@ -12,7 +12,7 @@ public class Nivel{
 	//Identificador.
 	public string nombre;
 	//Posibles estados del nivel.
-	public enum EstadoNivel{Inactivo,Inicio,Enemigos,Jefe,Final};
+	public enum EstadoNivel{Inactivo,Inicio,Enemigos,Jefe,Final,Terminado};
 	//Estado de este nivel.
 	public EstadoNivel miEstado = EstadoNivel.Inactivo;
 	//Tiempos
@@ -36,6 +36,8 @@ public class Escenario_Nivel : MonoBehaviour {
 	public Nivel nivelActual;
 	//Los spawnpoint.
 	public Transform[] spawnPoint;
+	//Donde aparece el Jefe.
+	public Transform spawnPoinJefe;
 	//Referencia al fondo del nivel.
 	public GameObject fondoNivel;
 	//Tiempo.
@@ -101,7 +103,9 @@ public class Escenario_Nivel : MonoBehaviour {
 				}
 			return;
 			case Nivel.EstadoNivel.Jefe:
-				Debug.Log("Spawn Jefe");
+				GameObject jefe = (GameObject)Instantiate(nivelActual.jefe, spawnPoinJefe.position, Quaternion.Euler(0,0,180));
+				jefe.name = "Jefe de Nivel";
+				nivelActual.miEstado = Nivel.EstadoNivel.Final;
 			return;
 			case Nivel.EstadoNivel.Final:
 				Debug.Log("Final de Nivel");
@@ -117,5 +121,9 @@ public class Escenario_Nivel : MonoBehaviour {
 		fondoNivel.renderer.material.mainTexture = nivelActual.mifondo;
 		//Asigno tiempo.
 		tiempo = Time.time;
+	}
+
+	public void JefeDerrotado(){
+		nivelActual.miEstado = Nivel.EstadoNivel.Terminado;
 	}
 }

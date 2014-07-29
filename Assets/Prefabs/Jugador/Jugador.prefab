@@ -26,10 +26,12 @@ GameObject:
   - 4: {fileID: 400002}
   - 60: {fileID: 6000000}
   - 50: {fileID: 5000000}
+  - 95: {fileID: 9500002}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
+  - 114: {fileID: 11400014}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Player
@@ -399,6 +401,20 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+--- !u!95 &9500002
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b609a2e30fd917418b39ad3c97c66ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_HasTransformHierarchy: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -441,7 +457,7 @@ MonoBehaviour:
   bala: {fileID: 100000, guid: e26dc643d46215e4e8c3794d7cda44cb, type: 2}
   laser: {fileID: 100000, guid: 0ce61fa35817c9e4a82b630dd9ac84d1, type: 2}
   disparoActual: 0
-  ratioDisparo: .25
+  ratioDisparo: .75
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -496,6 +512,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activo: 0
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76b06569b0e1c34898131597d614b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidasJugador: 3
+  efectoDestruccion: {fileID: 100000, guid: b7207892d4f77434eace5157da5bf4ce, type: 2}
+  invulnerable: 0
+  tInvulnerable: 3
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

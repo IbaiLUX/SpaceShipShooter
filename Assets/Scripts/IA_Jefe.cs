@@ -24,6 +24,8 @@ public class IA_Jefe : MonoBehaviour {
 	public float ratioDisparo = .5f;
 	//Almacen de tiempo para el siguiente disparo.
 	private float proximoDisparo = 0.1f;
+	//Efecto al ser destruido.
+	public GameObject efectoFinal;
 
 	// Use this for initialization
 	void Start () {
@@ -58,6 +60,19 @@ public class IA_Jefe : MonoBehaviour {
 				go.name = "Magia Jefe";
 				//...actualizo tiempo.
 				proximoDisparo = Time.time + ratioDisparo;
+			}
+			//...si la vida cae por debajo de 0...
+			if(vida <= 0){
+				//...creo el efecto de destruccion del enemigo.
+				GameObject go = (GameObject)Instantiate (efectoFinal, transform.position, Quaternion.identity);
+				//...renombro.
+				go.name = "Efecto Final";
+				//...lo destruto cuando termina la animacion.
+				Destroy(go, 1);
+				//...mando mensage a Escenario_Nivel
+				gameObject.SendMessage("JefeDerrotado", SendMessageOptions.DontRequireReceiver);
+				//...destruyo el jefe.
+				Destroy(gameObject);
 			}
 		}
 	}
