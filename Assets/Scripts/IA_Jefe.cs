@@ -69,8 +69,8 @@ public class IA_Jefe : MonoBehaviour {
 				go.name = "Efecto Final";
 				//...lo destruto cuando termina la animacion.
 				Destroy(go, 1);
-				//...mando mensage a Escenario_Nivel
-				gameObject.SendMessage("JefeDerrotado", SendMessageOptions.DontRequireReceiver);
+				//...cambio el estado del nivel.
+				GameObject.Find("Nivel").GetComponent<Escenario_Nivel>().JefeDerrotado();
 				//...destruyo el jefe.
 				Destroy(gameObject);
 			}

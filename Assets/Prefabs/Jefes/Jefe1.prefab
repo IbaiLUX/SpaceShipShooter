@@ -60,9 +60,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400006}
   - 212: {fileID: 21200004}
+  - 60: {fileID: 6000000}
   - 95: {fileID: 9500006}
   - 114: {fileID: 11400002}
-  - 60: {fileID: 6000000}
   m_Layer: 0
   m_Name: Jefe1
   m_TagString: Untagged

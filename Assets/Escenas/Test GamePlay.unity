@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Niveles:
-  - nombre: Nivel1
+  - ID: 1
     miEstado: 0
     tInicio: 3
     tEnemigos: 30
@@ -341,7 +341,7 @@ MonoBehaviour:
     - {fileID: 100006, guid: b8a729a2f2e23ca4fa209b63d8cecd0b, type: 2}
     jefe: {fileID: 100006, guid: f20fbea01bab6f44f850e3f9542fc241, type: 2}
     mifondo: {fileID: 2800000, guid: a2576ca832fe7e749a764ab284a67448, type: 3}
-  - nombre: Nivel2
+  - ID: 2
     miEstado: 0
     tInicio: 5.5
     tEnemigos: 30.2999992
@@ -351,7 +351,7 @@ MonoBehaviour:
     jefe: {fileID: 0}
     mifondo: {fileID: 0}
   nivelActual:
-    nombre: 
+    ID: 0
     miEstado: 0
     tInicio: 5.5
     tEnemigos: 30.2999992

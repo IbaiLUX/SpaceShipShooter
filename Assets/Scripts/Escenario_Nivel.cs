@@ -2,6 +2,8 @@
 /// Nivel.
 /// Este script se encarga de manejar el estado del juego dependiendo de como se encuentre el nivel actual.
 /// Contiene una clase plantilla de nivel.
+/// ***** NOTA *****
+/// Las ID seran seguidas 1,2,3,4...
 /// </summary>
 using UnityEngine;
 using System.Collections;
@@ -10,7 +12,7 @@ using System.Collections;
 [System.Serializable]
 public class Nivel{
 	//Identificador.
-	public string nombre;
+	public int ID;
 	//Posibles estados del nivel.
 	public enum EstadoNivel{Inactivo,Inicio,Enemigos,Jefe,Final,Terminado};
 	//Estado de este nivel.
@@ -103,12 +105,24 @@ public class Escenario_Nivel : MonoBehaviour {
 				}
 			return;
 			case Nivel.EstadoNivel.Jefe:
+				//Creo jefe.
 				GameObject jefe = (GameObject)Instantiate(nivelActual.jefe, spawnPoinJefe.position, Quaternion.Euler(0,0,180));
+				//Renombro.
 				jefe.name = "Jefe de Nivel";
+				//Cambio estado.
 				nivelActual.miEstado = Nivel.EstadoNivel.Final;
 			return;
 			case Nivel.EstadoNivel.Final:
-				Debug.Log("Final de Nivel");
+				//Batalla Jefe.
+			return;
+			case Nivel.EstadoNivel.Terminado:
+				//Si hay mas niveles...
+				if(Niveles[nivelActual.ID] != null){
+					//...carga el siguiente.
+					nivelActual = Niveles[nivelActual.ID];
+				}else{
+					Debug.Log("No mas niveles");
+				}
 			return;
 		}
 	}
