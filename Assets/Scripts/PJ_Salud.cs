@@ -42,10 +42,10 @@ public class PJ_Salud : MonoBehaviour {
 			GameObject go = (GameObject)Instantiate(efectoDestruccion, transform.position,Quaternion.identity);
 			//...destruyo efecto.
 			Destroy(go,1);
+			//...estado GameOver.
+			GameObject.Find("Nivel").GetComponent<Escenario_Nivel>().ReiniciaNivel();
 			//...destruyo jugador.
 			Destroy(gameObject);
-			//...estado GameOver.
-			Debug.Log("GAME OVER");
 		}
 	}
 

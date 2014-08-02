@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76b06569b0e1c34898131597d614b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidasJugador: 3
+  vidasJugador: 5
   efectoDestruccion: {fileID: 100000, guid: b7207892d4f77434eace5157da5bf4ce, type: 2}
   invulnerable: 0
   tInvulnerable: 3

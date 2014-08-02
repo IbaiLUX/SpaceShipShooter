@@ -32,6 +32,10 @@ public class Nivel{
 }
 
 public class Escenario_Nivel : MonoBehaviour {
+	//El jugador.
+	public GameObject jugador;
+	//Posicion de inicio del jugador.
+	public Transform inicioPos;
 	//Los nivels.
 	public Nivel[] Niveles = new Nivel[2];
 	//El nivel actual.
@@ -59,7 +63,7 @@ public class Escenario_Nivel : MonoBehaviour {
 	void Update () {
 		switch (nivelActual.miEstado) {
 			case Nivel.EstadoNivel.Inactivo:
-				ComienzaNivel();
+				//ComienzaNivel();
 			return;
 			case Nivel.EstadoNivel.Inicio:
 				//Si ha pasado el tiempo suficiente...
@@ -120,6 +124,12 @@ public class Escenario_Nivel : MonoBehaviour {
 				if(Niveles[nivelActual.ID] != null){
 					//...carga el siguiente.
 					nivelActual = Niveles[nivelActual.ID];
+					//Muestro el fondo del nivel.
+					fondoNivel.renderer.material.mainTexture = nivelActual.mifondo;
+					//Asigno tiempo.
+					tiempo = Time.time;
+					//Cambio el estado del nivel.
+					nivelActual.miEstado = Nivel.EstadoNivel.Inicio;
 				}else{
 					Debug.Log("No mas niveles");
 				}
@@ -128,16 +138,26 @@ public class Escenario_Nivel : MonoBehaviour {
 	}
 
 	//Empieza el nivel.
-	private void ComienzaNivel(){
+	public void ComienzaNivel(){
 		//Cambio el estado del nivel.
 		nivelActual.miEstado = Nivel.EstadoNivel.Inicio;
 		//Muestro el fondo del nivel.
 		fondoNivel.renderer.material.mainTexture = nivelActual.mifondo;
 		//Asigno tiempo.
 		tiempo = Time.time;
+		//Creo jugador.
+		GameObject go = (GameObject)Instantiate (jugador, inicioPos.position, Quaternion.identity);
+		//Renombro.
+		go.name = "Jugador";
 	}
 
 	public void JefeDerrotado(){
 		nivelActual.miEstado = Nivel.EstadoNivel.Terminado;
+	}
+
+	public void ReiniciaNivel(){
+		nivelActual.miEstado = Nivel.EstadoNivel.Inactivo;
+		fondoNivel.renderer.material.mainTexture = null;
+		gameObject.GetComponent<Escenario_Menu> ().CambiaGameOver ();
 	}
 }
