@@ -4,9 +4,11 @@
 /// TIPOS DE DISPARO:
 /// -Simple: una sola bala.
 /// -Dos: dos balas paralelas.
-/// -Tres: tres balas, una central y dos laterales. TEMPORAL
-/// -Cuatro: cuatro balas,delante, detras, izquierda y derecha. TEMPORAL
-/// -Laser: un disparo que cruza todo el escenario. TEMPORAL
+/// -Tres: tres balas, una central y dos laterales.
+/// -Cuatro: cuatro balas,delante, detras, izquierda y derecha.
+/// -Laser: un disparo que cruza todo el escenario.
+/// RATIO DISPARO:
+/// El ratio estara por defecto a 0.75
 /// </summary>
 using UnityEngine;
 using System.Collections;
@@ -23,7 +25,7 @@ public class PJ_Disparo : MonoBehaviour {
 	//Tipo de disparo actual.
 	public TiposDisparo disparoActual = TiposDisparo.simple;
 	//Ratio de disparo.
-	public float ratioDisparo = .5f;
+	public float ratioDisparo = .75f;
 	//Almacen de tiempo para el siguiente disparo.
 	private float proximoDisparo;
 	
@@ -104,5 +106,11 @@ public class PJ_Disparo : MonoBehaviour {
 				return;
 			}
 		}
+	}
+
+	public IEnumerator CambioRatio(){
+		ratioDisparo = 0.25f;
+		yield return new WaitForSeconds (5);
+		ratioDisparo = 0.75f;
 	}
 }

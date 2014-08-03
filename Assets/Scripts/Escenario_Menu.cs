@@ -12,6 +12,8 @@ public class Escenario_Menu : MonoBehaviour {
 	public bool pausado = false;
 	//Referencia al Nivel.
 	private Escenario_Nivel en;
+	//Referencia a la salud del jugador.
+	private PJ_Salud pjS;
 	//Definiedo y creando Delegate para GUI.
 	private delegate void Menus();
 	private Menus menuActual;
@@ -69,24 +71,31 @@ public class Escenario_Menu : MonoBehaviour {
 			this.menuActual = MenuPrincipal;
 		}
 		//Texto indicativo.
-		string miTexto = "\n\nPara desplazarte usa teclas W-A-S-D o flechas de direccion.\nPara disparar usa Boton IZQ de raton o tecla CTRL";
+		string miTexto = "\n\nPara desplazarte usa teclas W-A-S-D o flechas de direccion.\n\nPara disparar usa Boton IZQ de raton o tecla CTRL IZQ";
 		//Caja para el texto.
 		GUI.Box (new Rect (150, 200, 600, 300), miTexto);
 	}
-	//MENU EN JUEGO, opciones si se pausa, UI de juego.
+	//MENU EN JUEGO, reinicio si se pausa, UI de juego.
 	private void MenuJuego() { 
 		//Si estoy en pausa.
 		if (pausado) {
 			//Si pulso el boton...
-			if (GUI.Button (new Rect (300,75,300,100), "Reiniciar")){
+			if (GUI.Button (new Rect (300, 75, 300, 100), "Reiniciar")) {
 				//...cambio estado.
-				Application.LoadLevel(0);
+				Application.LoadLevel (0);
 			}
-			if (GUI.Button (new Rect (300,200,300,100), "Continuar")){
+			if (GUI.Button (new Rect (300, 200, 300, 100), "Continuar")) {
 				//...cambio estado.
 				pausado = false;
 			} 
-		} 
+		}
+		//Si no estoy pausado...
+		else {
+			//Recojo PJ_Salud.
+			pjS = GameObject.FindGameObjectWithTag("Player").GetComponent<PJ_Salud>();
+			//Creo texto indicativo.
+			GUI.Box(new Rect(25,10,200,25), "Vidas:"+pjS.vidasJugador.ToString());	
+		}
 	}
 	//MENU FINAL PARTIDA, opcion de reinicio.
 	private void GameOver(){

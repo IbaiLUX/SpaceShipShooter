@@ -18,6 +18,8 @@ public class PowerUP : MonoBehaviour {
 	private PJ_Disparo pjD;
 	//Referencia al script de escudos del jugador.
 	private PJ_Escudos pjE;
+	//Referencia al script de salud del jugador.
+	private PJ_Salud pjS; 
 	//Sprites posibles.
 	public Sprite[] sprites;
 	
@@ -26,6 +28,8 @@ public class PowerUP : MonoBehaviour {
 		pjD = GameObject.FindGameObjectWithTag ("Player").GetComponent<PJ_Disparo> ();
 		//Recojo la referencia al script de escudos del jugador.
 		pjE = GameObject.FindGameObjectWithTag ("Player").GetComponent<PJ_Escudos> ();
+		//Recojo la referencia al script de salud del jugador.
+		pjS = GameObject.FindGameObjectWithTag ("Player").GetComponent<PJ_Salud> ();
 		//Le doy valor aleatorio al powerUp.
 		miPowerUP = GetRandomEnum<TiposPowerUP> ();
 		//Dependiendo del tipo de power up...
@@ -149,6 +153,20 @@ public class PowerUP : MonoBehaviour {
 				case TiposPowerUP.Escudo:
 					//...activo escudo.
 					pjE.ActivarEscudo();
+					//...destruyo item.
+					Destroy(gameObject);
+				return;
+				//Si es vida...
+				case TiposPowerUP.Vida:
+					//...sumo una vida al jugador.
+					pjS.vidasJugador = pjS.vidasJugador + 1;
+					//...destruyo item.
+					Destroy(gameObject);
+				return;
+				//Si es ratio...
+				case TiposPowerUP.Ratio:
+					//...cambio ratio.
+					pjD.StartCoroutine(pjD.CambioRatio());
 					//...destruyo item.
 					Destroy(gameObject);
 				return;
