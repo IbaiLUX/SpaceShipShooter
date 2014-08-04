@@ -29,6 +29,8 @@ public class Nivel{
 	public GameObject jefe;
 	//Textura de fondo de este nivel.
 	public Texture mifondo;
+	//Audio de fondo para el nivel.
+	public AudioClip audioFondo;
 }
 
 public class Escenario_Nivel : MonoBehaviour {
@@ -50,6 +52,8 @@ public class Escenario_Nivel : MonoBehaviour {
 	private float tiempo;
 	//Tiempo para proximo enemigo.
 	private float tProxEnemigo;
+	//Referencia al audio de fondo.
+	public AudioSource miAudioSource;
 
 	// Use this for initialization
 	void Start () {
@@ -121,7 +125,7 @@ public class Escenario_Nivel : MonoBehaviour {
 			return;
 			case Nivel.EstadoNivel.Terminado:
 				//Si hay mas niveles...
-				if(Niveles[nivelActual.ID] != null){
+				if(nivelActual.ID < Niveles.Length){
 					//...carga el siguiente.
 					nivelActual = Niveles[nivelActual.ID];
 					//Muestro el fondo del nivel.
@@ -131,7 +135,10 @@ public class Escenario_Nivel : MonoBehaviour {
 					//Cambio el estado del nivel.
 					nivelActual.miEstado = Nivel.EstadoNivel.Inicio;
 				}else{
-					Debug.Log("No mas niveles");
+					//No hay mas niveles.
+					nivelActual.miEstado = Nivel.EstadoNivel.Inactivo;
+					//Cambio menu.
+					gameObject.GetComponent<Escenario_Menu> ().CambiaCompletado();
 				}
 			return;
 		}
@@ -143,6 +150,10 @@ public class Escenario_Nivel : MonoBehaviour {
 		nivelActual.miEstado = Nivel.EstadoNivel.Inicio;
 		//Muestro el fondo del nivel.
 		fondoNivel.renderer.material.mainTexture = nivelActual.mifondo;
+		//Cargo el audio del nivel.
+		miAudioSource.clip = nivelActual.audioFondo;
+		//Suelto audio.
+		miAudioSource.Play ();
 		//Asigno tiempo.
 		tiempo = Time.time;
 		//Creo jugador.

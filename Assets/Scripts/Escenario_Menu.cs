@@ -14,6 +14,8 @@ public class Escenario_Menu : MonoBehaviour {
 	private Escenario_Nivel en;
 	//Referencia a la salud del jugador.
 	private PJ_Salud pjS;
+	//Audio activado.
+	public bool audioSI = true;
 	//Definiedo y creando Delegate para GUI.
 	private delegate void Menus();
 	private Menus menuActual;
@@ -42,6 +44,11 @@ public class Escenario_Menu : MonoBehaviour {
 			//...reestablezco el tiempo.
 			Time.timeScale = 1;
 		}
+		if (audioSI) {
+			AudioListener.volume = 1;		
+		} else {
+			AudioListener.volume = 0;		
+		}
 
 	}
 
@@ -59,9 +66,16 @@ public class Escenario_Menu : MonoBehaviour {
 			//...inicio el Nivel.
 			en.ComienzaNivel();
 		}
+		//Si pulso el boton...
 		if (GUI.Button (new Rect (300,200,300,100), "Como jugar?")){
+			//...cambio estado.
 			this.menuActual = Tutorial;
 		}
+		//Creo contenedor para el toggle del audio.
+		GUI.Box (new Rect (775, 10, 100, 50),"Opcion Audio:");
+		//Asigno valor a audioSi dependiendo del toggle.
+		audioSI = GUI.Toggle (new Rect (800, 30, 50, 50), audioSI, "Audio SI/NO");
+
 	}
 	//MENU DEL TUTORIAL, Un boton para regresar a PRINCIPAL y una explicacion de controles.
 	private void Tutorial(){
@@ -70,10 +84,7 @@ public class Escenario_Menu : MonoBehaviour {
 			//...cambio estado.
 			this.menuActual = MenuPrincipal;
 		}
-		//Texto indicativo.
-		string miTexto = "\n\nPara desplazarte usa teclas W-A-S-D o flechas de direccion.\n\nPara disparar usa Boton IZQ de raton o tecla CTRL IZQ";
-		//Caja para el texto.
-		GUI.Box (new Rect (150, 200, 600, 300), miTexto);
+		GUI.Box (new Rect (150, 200, 600, 300), "\n\nPara desplazarte usa teclas W-A-S-D o flechas de direccion.\n\nPara disparar usa Boton IZQ de raton o tecla CTRL IZQ");
 	}
 	//MENU EN JUEGO, reinicio si se pausa, UI de juego.
 	private void MenuJuego() { 
@@ -84,10 +95,15 @@ public class Escenario_Menu : MonoBehaviour {
 				//...cambio estado.
 				Application.LoadLevel (0);
 			}
+			//Si pulso el boton...
 			if (GUI.Button (new Rect (300, 200, 300, 100), "Continuar")) {
 				//...cambio estado.
 				pausado = false;
-			} 
+			}
+			//Creo contenedor para el toggle del audio.
+			GUI.Box (new Rect (775, 10, 100, 50),"Opcion Audio:");
+			//Asigno valor a audioSi dependiendo del toggle.
+			audioSI = GUI.Toggle (new Rect (800, 30, 50, 50), audioSI, "Audio SI/NO");
 		}
 		//Si no estoy pausado...
 		else {
@@ -105,8 +121,20 @@ public class Escenario_Menu : MonoBehaviour {
 			Application.LoadLevel(0);
 		} 
 	}
+	//MENU JUEGO TERMINADO, reiniciar.
+	private void JuegoCompletado(){
+		//Si pulso el boton...
+		if (GUI.Button (new Rect (300,75,300,100), "Reiniciar")){
+			//...cambio estado.
+			Application.LoadLevel(0);
+		}
+		GUI.Box (new Rect (150, 200, 600, 300), "\n\nFELICIDADES\n\nCOMPLETASTE EL JUEGO!");
+	}
 
 	public void CambiaGameOver(){
 		this.menuActual = GameOver;
+	}
+	public void CambiaCompletado(){
+		this.menuActual = JuegoCompletado;
 	}
 }
