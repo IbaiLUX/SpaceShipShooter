@@ -44,9 +44,12 @@ public class Escenario_Menu : MonoBehaviour {
 			//...reestablezco el tiempo.
 			Time.timeScale = 1;
 		}
+		//Si hay audio...
 		if (audioSI) {
+			//...ajusto el volumen del Listener
 			AudioListener.volume = 1;		
 		} else {
+			//...ajusto el volumen del Listener
 			AudioListener.volume = 0;		
 		}
 
@@ -130,11 +133,14 @@ public class Escenario_Menu : MonoBehaviour {
 		}
 		GUI.Box (new Rect (150, 200, 600, 300), "\n\nFELICIDADES\n\nCOMPLETASTE EL JUEGO!");
 	}
-
+	//Cambia el estado del menu a Game Over.
 	public void CambiaGameOver(){
+		//Cambia estado.
 		this.menuActual = GameOver;
 	}
+	//Cambia el estado del menu a Completado.
 	public void CambiaCompletado(){
+		//Cambia estado.
 		this.menuActual = JuegoCompletado;
 	}
 }

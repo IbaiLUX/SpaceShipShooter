@@ -6,16 +6,18 @@ using UnityEngine;
 using System.Collections;
 
 public class Escudo : MonoBehaviour {
-
+	//Esta activo.
 	public bool activo = false;
-
+	//Referencia al Sprite.
 	private SpriteRenderer miSprite;
 
 	void Start(){
+		//Recojo render.
 		miSprite = gameObject.GetComponent<SpriteRenderer> ();
 	}
 
 	void Update(){
+		//Asigno valur dependiendo de si esta activo.
 		miSprite.enabled = activo;
 	}
 

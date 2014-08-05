@@ -241,7 +241,7 @@ MonoBehaviour:
     - {fileID: 100006, guid: 57e2d80d54f8c7d4b9eb13348716af36, type: 2}
     jefe: {fileID: 100012, guid: 3007735bd62905b4c8003c795cbc9aa4, type: 2}
     mifondo: {fileID: 2800000, guid: 22a3d8e53790c7c4cb59a85b07525dfd, type: 3}
-    audioFondo: {fileID: 8300000, guid: 1fe7350aa49e33e4facef9ef577a70e9, type: 3}
+    audioFondo: {fileID: 8300000, guid: 8de2c87a68e5953428538caf65c49e25, type: 3}
   nivelActual:
     ID: 0
     miEstado: 0

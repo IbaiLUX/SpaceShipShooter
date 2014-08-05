@@ -7,8 +7,9 @@ using System.Collections;
 
 public class Escenario_Limites : MonoBehaviour {
 
-	void OnTriggerExit2D(Collider2D other)
-	{
+	//Cuando algun collider salga de este trigger...
+	void OnTriggerExit2D(Collider2D other){
+		//...lo destruyo.
 		Destroy(other.gameObject);
 	}
 }

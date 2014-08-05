@@ -130,6 +130,10 @@ public class Escenario_Nivel : MonoBehaviour {
 					nivelActual = Niveles[nivelActual.ID];
 					//Muestro el fondo del nivel.
 					fondoNivel.renderer.material.mainTexture = nivelActual.mifondo;
+					//Cargo el audio del nivel.
+					miAudioSource.clip = nivelActual.audioFondo;
+					//Suelto audio.
+					miAudioSource.Play ();
 					//Asigno tiempo.
 					tiempo = Time.time;
 					//Cambio el estado del nivel.
@@ -161,14 +165,19 @@ public class Escenario_Nivel : MonoBehaviour {
 		//Renombro.
 		go.name = "Jugador";
 	}
-
+	//Cambia el estado al derrotar al jefe del nivel.
 	public void JefeDerrotado(){
+		//Cambio estado.
 		nivelActual.miEstado = Nivel.EstadoNivel.Terminado;
 	}
 
+	//Reinicia el nivel.
 	public void ReiniciaNivel(){
+		//Cambio estado.
 		nivelActual.miEstado = Nivel.EstadoNivel.Inactivo;
+		//Cambio el fondo.
 		fondoNivel.renderer.material.mainTexture = null;
+		//Llamo cambio de menu.
 		gameObject.GetComponent<Escenario_Menu> ().CambiaGameOver ();
 	}
 }

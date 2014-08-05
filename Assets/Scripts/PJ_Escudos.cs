@@ -20,7 +20,7 @@ public class PJ_Escudos : MonoBehaviour {
 	void Update () {
 		//Roto el contenedor de escudos.
 		cEscudos.rotation = Quaternion.Euler(0,0,Time.time*vRotacion);
-
+		//Asigno escudo actual.
 		if (misEscudos [0].activo == false && misEscudos [1].activo == false && misEscudos [2].activo == false) {
 			escudoActual = EscudosActivos.Ninguno;		
 		}
@@ -43,7 +43,7 @@ public class PJ_Escudos : MonoBehaviour {
 			escudoActual = EscudosActivos.Segundo_Tercero;		
 		}
 	}
-
+	//Para activar el escudo pertinente.
 	public void ActivarEscudo(){
 		switch (escudoActual) {
 			case EscudosActivos.Ninguno:
@@ -69,6 +69,7 @@ public class PJ_Escudos : MonoBehaviour {
 				return;
 		}
 	}
+	//Para desactivar el escudo pertinente.
 	public void DesActivarEscudo(){
 		switch (escudoActual) {
 		case EscudosActivos.Ninguno:
