@@ -69,4 +69,29 @@ public class PJ_Escudos : MonoBehaviour {
 				return;
 		}
 	}
+	public void DesActivarEscudo(){
+		switch (escudoActual) {
+		case EscudosActivos.Ninguno:
+			//misEscudos[0].activo = true;
+			return;
+		case EscudosActivos.Primero:
+			misEscudos[0].activo = false;
+			return;
+		case EscudosActivos.Segundo:
+			misEscudos[1].activo = false;
+			return;
+		case EscudosActivos.Tercero:
+			misEscudos[2].activo = false;
+			return;
+		case EscudosActivos.Primero_Segundo:
+			misEscudos[1].activo = false;
+			return;
+		case EscudosActivos.Primero_Tercero:
+			misEscudos[2].activo = false;
+			return;
+		case EscudosActivos.Segundo_Tercero:
+			misEscudos[2].activo = false;
+			return;
+		}
+	}
 }

@@ -82,6 +82,8 @@ public class IA_Jefe : MonoBehaviour {
 		if (fFinal && c.tag == "BalaJugador") {
 			//...resto un punto de vida.
 			vida = vida -1;
+			//...destruyo la bala.
+			Destroy(c.gameObject);
 		}
 	}
 }

@@ -18,6 +18,8 @@ public class PJ_Salud : MonoBehaviour {
 	private float tProxInvulnerable;
 	//Referencia al animator
 	private Animator anim;
+	//
+	private PJ_Escudos pjE;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +27,8 @@ public class PJ_Salud : MonoBehaviour {
 		tProxInvulnerable = Time.time + tInvulnerable;
 		//Asigno animator.
 		anim = gameObject.GetComponent<Animator> ();
+		//
+		pjE = gameObject.GetComponent<PJ_Escudos> ();
 	}
 	
 	// Update is called once per frame
@@ -50,8 +54,8 @@ public class PJ_Salud : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D c){
-		//Si lo que dispara el trigger es la bala enemiga y no soy invulnerable...
-		if (c.tag == "BalaEnemiga" && !invulnerable) {
+		//Si lo que dispara el trigger es la bala enemiga y no soy invulnerable y no tengo escudo...
+		if (c.tag == "BalaEnemiga" && !invulnerable && pjE.escudoActual == PJ_Escudos.EscudosActivos.Ninguno) {
 			//...resto una vida.
 			vidasJugador = vidasJugador - 1;
 			//...me hago invulnerable.
@@ -64,6 +68,15 @@ public class PJ_Salud : MonoBehaviour {
 			GameObject go = (GameObject)Instantiate(efectoDestruccion, transform.position,Quaternion.identity);
 			//...destruyo.
 			Destroy(go,1);
+			//...destruyo la bala.
+			Destroy(c.gameObject);
+		}
+		//Si lo que dispara el trigger es la bala enemiga y tengo escudo...
+		if (c.tag == "BalaEnemiga" && pjE.escudoActual != PJ_Escudos.EscudosActivos.Ninguno) {
+			//...destruyo la bala.
+			Destroy(c.gameObject);
+			//...desactivo escudo.
+			pjE.DesActivarEscudo();
 		}
 	}
 }
